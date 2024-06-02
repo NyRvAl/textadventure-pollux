@@ -97,7 +97,16 @@ sequenceDiagram
 
 
 4. **Input Actions and Response**: In scenarios where the game requires player input, such as making a decision or responding to a prompt, the game pauses and waits for the player's response over the websocket connection. Once received, the game resumes.
+***
+Roadmap
+- [ ] **Improved Exception Handling**: Enhance the error handling mechanism to provide more informative and user-friendly error messages, aiding players in troubleshooting issues encountered during gameplay.
 
+
+- [ ] **Enhanced Multiplayer**: Implement improvements to the multiplayer functionality, allowing for a more seamless and engaging multiplayer experience. This may include features such as real-time chat, collaborative puzzle-solving, or competitive gameplay modes.
+
+- [ ] **Security Enhancements**: Introduce authentication and authorization mechanisms to improve the security of the application, safeguarding user data and preventing unauthorized access.
+
+- [ ] **Content Expansion**: Expand the library of adventures available to players by creating new content.
 ***
 ## Results
 
@@ -106,6 +115,7 @@ sequenceDiagram
 Overall, the Text Adventure project offers an efficient solution for managing adventures in various scenarios. With an intuitive and user-friendly workspace, the program is easy to navigate. Leveraging modern technologies like WPF, Angular, and Java Spring Boot ensures high flexibility and scalability. 
 
 It's worth noting that no authentication system has been implemented yet in the text adventure project. This may be considered for future iterations to enhance security and user management capabilities. Additionally, while the project allows for multiple players to interact with the same text adventure, there is no true multiplayer functionality. Instead, players can engage in the adventure concurrently, providing answers in real-time, with the first valid response being accepted.
+***
 ## Tech Stack
 ### Frontend
 

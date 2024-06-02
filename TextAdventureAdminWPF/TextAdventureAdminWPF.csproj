@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	<TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
+	<SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Ressources\**" />
+    <EmbeddedResource Remove="Ressources\**" />
+    <None Remove="Ressources\**" />
+    <Page Remove="Ressources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="5442674.png" />
+    <None Remove="5442674.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="5442674.png" />
+    <Resource Include="5442674.svg" />
+  </ItemGroup>
+
+</Project>

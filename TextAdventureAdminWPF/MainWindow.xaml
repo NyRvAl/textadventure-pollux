@@ -1,0 +1,45 @@
+﻿<Window x:Class="TextAdventureAdminWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextAdventureAdminWPF"
+        xmlns:controls="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="471*"/>
+            <ColumnDefinition Width="168*"/>
+        </Grid.ColumnDefinitions>
+        <!-- SVG background image -->
+        <Image Source="/5442674.png"
+               Stretch="UniformToFill" Opacity="1" Panel.ZIndex="0" Grid.ColumnSpan="3"/>
+
+        <!-- Button to upload new text adventure -->
+        <Button Content="Upload New Adventure" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Click="UploadButton_Click" Panel.ZIndex="1" BorderBrush="White" Background="White" Foreground="#FF19130E" FontFamily="Arial Black" Grid.ColumnSpan="2" Width="160" Height="33"/>
+
+        <!-- TextBlock to display title -->
+        <TextBlock Text="Available Text Adventures" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0" FontSize="20" Panel.ZIndex="1" Grid.Column="1" Foreground="White" FontFamily="Arial Black" FontWeight="Bold"/>
+
+        <!-- ListBox to display available text adventures -->
+        <ListBox x:Name="lstTextAdventures" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="100,0,0,0" Width="600" Height="300" Panel.ZIndex="1" Grid.ColumnSpan="3">
+            <!-- ItemTemplate to customize ListBox items -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <!-- CheckBox to enable/disable text adventure -->
+                        <CheckBox Margin="0,0,10,0" IsChecked="{Binding AdventureGameModel.Available}" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                        <!-- TextBlock to display text adventure information -->
+                        <StackPanel>
+                            <TextBlock Text="{Binding AdventureGameModel.Id, StringFormat='ID: {0}'}" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding GameInfoDTO.DisplayName, StringFormat='Title: {0}'}" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding GameInfoDTO.Author, StringFormat='Author: {0}'}" Margin="0,0,0,5"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

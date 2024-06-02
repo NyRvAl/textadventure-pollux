@@ -1,0 +1,144 @@
+{"author": "Karli",
+  "displayName": "Juli stinkt",
+  "adventure": [
+    {
+      "id": 0,
+      "stage": 0,
+      "requirements": [],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Willkommen in Westeros! Du befindest dich in den kalten Wäldern des Nordens."
+        },
+        {
+          "action": "SLEEP",
+          "time": 2000
+        },
+        {
+          "action": "WRITE",
+          "text": "Der Wind trägt das Heulen der Wölfe zu dir herüber."
+        },
+        {
+          "action": "SLEEP",
+          "time": 2000
+        },
+        {
+          "action": "WRITE",
+          "text": "Vor dir siehst du zwei Wege. Möchtest du den Weg zur Mauer oder den Weg zum Königsmund nehmen? (Antworte mit 'Mauer' oder 'Königsmund')"
+        },
+        {
+          "action": "WAITING_FOR_INPUT",
+          "limit": ["Mauer", "Königsmund"],
+          "setVariables": ["chosenPath={input}"]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "stage": 1,
+      "requirements": [
+        {
+          "variable": "chosenPath",
+          "value": "Mauer"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Du begibst dich zur Mauer, wo die Nachtwache über das Reich wacht."
+        },
+        {
+          "action": "SLEEP",
+          "time": 2000
+        },
+        {
+          "action": "WRITE",
+          "text": "Die Luft ist kalt und schneidet wie ein Dolch durch deine Kleidung."
+        },
+        {
+          "action": "SLEEP",
+          "time": 2000
+        },
+        {
+          "action": "WRITE",
+          "text": "Möchtest du die Mauer überqueren und nach Norden reisen oder zurück in den Norden gehen? (Antworte mit 'überqueren' oder 'zurück')"
+        },
+        {
+          "action": "WAITING_FOR_INPUT",
+          "limit": ["überqueren", "zurück"],
+          "setVariables": ["wallDecision={input}"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "stage": 2,
+      "requirements": [
+        {
+          "variable": "wallDecision",
+          "value": "überqueren"
+        }
+      ],
+      "actions": [
+        {
+          "action": "RANDOM_NUMBER",
+          "min": 1,
+          "max": 2,
+          "setVariables": ["randomEvent={random}"]
+        },
+        {
+          "action": "WRITE",
+          "text": "Du überquerst die Mauer und triffst auf eine Gruppe Wildlinge."
+        },
+        {
+          "action": "SLEEP",
+          "time": 2000
+        },
+        {
+          "action": "WRITE",
+          "text": "Generierte Zahl: {{randomEvent}}"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "stage": 3,
+      "requirements": [
+        {
+          "variable": "wallDecision",
+          "value": "überqueren"
+        },
+        {
+          "variable": "randomEvent",
+          "value": 1
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Nach einem heftigen Kampf überlebst du knapp!"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "stage": 3,
+      "requirements": [
+        {
+          "variable": "wallDecision",
+          "value": "überqueren"
+        },
+        {
+          "variable": "randomEvent",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Eine Lawine erfasst dich. Das Abenteuer endet hier."
+        }
+      ]
+    }
+  ]
+}

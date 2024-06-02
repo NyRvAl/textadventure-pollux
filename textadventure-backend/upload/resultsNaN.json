@@ -1,0 +1,74 @@
+[
+    {
+        "wellIndex": 0,
+        "wellName": "A1",
+        "absorbanceValue": 3.017,
+        "fluorescenceValue": 10747
+    },
+    {
+        "wellIndex": 1,
+        "wellName": "A2",
+        "absorbanceValue": 1.485,
+        "fluorescenceValue": 15093
+    },
+    {
+        "wellIndex": 2,
+        "wellName": "A3",
+        "absorbanceValue": 4.511,
+        "fluorescenceValue": null
+    },
+    {
+        "wellIndex": 3,
+        "wellName": "A4",
+        "absorbanceValue": 3.941,
+        "fluorescenceValue": 62371
+    },
+    {
+        "wellIndex": 4,
+        "wellName": "B1",
+        "absorbanceValue": null,
+        "fluorescenceValue": 14017
+    },
+    {
+        "wellIndex": 5,
+        "wellName": "B2",
+        "absorbanceValue": 2.953,
+        "fluorescenceValue": 59181
+    },
+    {
+        "wellIndex": 6,
+        "wellName": "B3",
+        "absorbanceValue": 1.409,
+        "fluorescenceValue": 41038
+    },
+    {
+        "wellIndex": 7,
+        "wellName": "B4",
+        "absorbanceValue": 2.855,
+        "fluorescenceValue": 40357
+    },
+    {
+        "wellIndex": 8,
+        "wellName": "C1",
+        "absorbanceValue": null,
+        "fluorescenceValue": null
+    },
+    {
+        "wellIndex": 9,
+        "wellName": "C2",
+        "absorbanceValue": 1.336,
+        "fluorescenceValue": 30766
+    },
+    {
+        "wellIndex": 10,
+        "wellName": "C3",
+        "absorbanceValue": 0.303,
+        "fluorescenceValue": 10797
+    },
+    {
+        "wellIndex": 11,
+        "wellName": "C4",
+        "absorbanceValue": 1.21,
+        "fluorescenceValue": 2818
+    }
+]

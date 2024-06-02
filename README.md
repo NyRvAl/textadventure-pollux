@@ -98,7 +98,7 @@ sequenceDiagram
 
 4. **Input Actions and Response**: In scenarios where the game requires player input, such as making a decision or responding to a prompt, the game pauses and waits for the player's response over the websocket connection. Once received, the game resumes.
 ***
-Roadmap
+### Roadmap
 - [ ] **Improved Exception Handling**: Enhance the error handling mechanism to provide more informative and user-friendly error messages, aiding players in troubleshooting issues encountered during gameplay.
 
 

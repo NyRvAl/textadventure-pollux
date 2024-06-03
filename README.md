@@ -98,9 +98,140 @@ sequenceDiagram
 
 4. **Input Actions and Response**: In scenarios where the game requires player input, such as making a decision or responding to a prompt, the game pauses and waits for the player's response over the websocket connection. Once received, the game resumes.
 ***
+### How to build your own text adventure
+1. First of all, some information like the name of the adventure and the author name is needed. Therefore, there's a so called **Adventure-Header** at the beginning of the json file. 
+
+*Example*: 
+```json
+{"author": "Gave",  "displayName": "GoT"}
+  ```
+The header is needed in order to display the informations of the adventure correctly on the website.
+
+2. Here you start with the actual building of your project. You define your stages, where the start stage index **must equal 0**. This is ensures that the backend will know where to start. Every created stage (if it's not a conditional stage) must increase by one, otherwhise your adventure will end if no stage is found.
+
+*Example*:
+```json
+{"author": "Gave",
+  "displayName": "GoT",
+  "adventure": [
+    {
+      "id": 0,
+      "stage": 0,
+      "requirements": [],
+      "actions": []
+    }]
+    } 
+```
+3. Now you can start creating your actions. You can currently choose between **Input** ("*WAIT_FOR_INPUT*"), **Output**("*WRITE*"), **Timeout** ("*SLEEP*") and **Random-Number**("*RANDOM_NUMBER*") actions (more to follow). Depending on your chosen action there are different fields to set. However, there are some fields which can be used in every action:
+
+- setVariables
+    - string, allows local variables to be stored in a global context (only text adventure wise)
+- action
+    - string, The action property should be assigned to the action type to define the action. 
+
+Fields, only available in some actions: 
+
+**Input**: 
+- limit
+    - string array, limits the valid input, when a input does not match nothing happens
+
+**Output**:
+- text
+    - string, text to be given out, allows the use of variables (more to variables later on)
+
+**Timeout**:
+- time
+    - integer, time to pause until the action gets executed, only client side
+
+**Random-Number**:
+- min
+    - integer, defines the minimum of a random number(inclusive)
+- max
+    - integer, defines the upper bond of a random number
+    (inclusive)
+*Example*:
+```json
+        {
+          "action": "RANDOM_NUMBER",
+          "min": 1,
+          "max": 2,
+          "setVariables": ["randomEvent={random}"]
+        }
+```
+4. Now after you know how to use actions, we move on to create a so-called *conditional stage*. A conditional stage occurs when there are two or more stages with the same stage index, while having different criterias. When a requirement exists, the variable manager searches in the global context for the given variable. If the value of the variable equals the requirements' value, the criteria has been met. Every requirement needs to be applied in order to move on with the next stage. 
+
+*Example*:
+```json
+{
+      "id": 4,
+      "stage": 3,
+      "requirements": [
+        {
+          "variable": "wallDecision",
+          "value": "überqueren"
+        },
+        {
+          "variable": "randomEvent",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Eine Lawine erfasst dich. Das Abenteuer endet hier."
+        }
+      ]
+    }
+```
+5. In order to use variables efficiently, you need a proper understanding of it. As stated above, variables can also be used in your output actions and requirements. Local variables are only available in the current action while global variables can be accessed in any action. Not all actions provide local variables. Following variables do exist in a local context:
+
+- **output action**
+    - text
+        - the replaced text with reolved variables
+- **input action**
+    - input
+        - the input provided by the user
+- **random number action**
+    - random
+        - the generated number
+    
+    The *setVariables* property can be used to store the local variable in a global context so you can also access it by requirements and other output actions.
+
+    Only global variables can be used in a output action. The variable needs to be surrounded by two curved braces. Setting a variable via the *setVariable* property differs when you want to set a new variable to a local or global variable. While global variables should also be surrounded by two curved braces, while the local ones only by one.
+
+*Example setting a global variable to the value of a local variable*:
+```json
+        {
+          "action": "WAITING_FOR_INPUT",
+          "limit": ["überqueren", "zurück"],
+          "setVariables": ["wallDecision={input}"]
+        }
+```     
+
+*Example setting a global variable to the value of a global variable*:
+```json
+        {
+          "action": "WAITING_FOR_INPUT",
+          "limit": ["überqueren", "zurück"],
+          "setVariables": ["wallDecision={{random}}"]
+        }
+```   
+
+*Example using variable in output action*:
+```json
+        {
+          "action": "WRITE",
+          "text": "Deine Eingabe {{chosenPath}}"
+        }
+```
+
+
+   
+
+
+***
 ### Roadmap
 - [ ] **Improved Exception Handling**: Enhance the error handling mechanism to provide more informative and user-friendly error messages, aiding players in troubleshooting issues encountered during gameplay.
-
 
 - [ ] **Enhanced Multiplayer**: Implement improvements to the multiplayer functionality, allowing for a more seamless and engaging multiplayer experience. This may include features such as real-time chat, collaborative puzzle-solving, or competitive gameplay modes.
 

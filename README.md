@@ -385,7 +385,77 @@ Fields, only available in some actions:
 }
 
 ```
+***
+### REST-API endpoints
 
+#### AdventureController
+  - **@PostMapping**("/newAdventure")
+  - **Description**: Uploads a new adventure file.
+  - **Request Param**: MultipartFile file
+  - **Status Codes**:
+    - 201 CREATED - Successfully uploaded the adventure file.
+  - **Exceptions**:
+    - FileUploadException - If the file upload fails.
+    - FileEmptyException - If the uploaded file is empty.
+    <br/>    
+  - **@GetMapping**("/playAdventure")
+  - **Description**: Retrieves the content of a specified adventure file.
+  - **Request Param**: String name
+  - **Response**: String
+  - **Status Codes**:
+    - 200 OK - Successfully retrieved the file content.
+    - 404 NOT FOUND - If the file is not found.
+  - **Exceptions**:
+    - GameFileReadException - If there's an error reading the adventure file.
+        <br/>
+  - **@PostMapping**("/review")
+  - **Description**: Submits a review for an adventure.
+  - **Request Body**: ReviewDTO
+  - **Status Codes**:
+    - 202 ACCEPTED - Successfully submitted the review.
+  - **Exceptions**:
+    - AdventureNotFoundException - If the adventure with the specified ID is not found.
+        <br/>
+
+  - **@GetMapping**("/availableGames")
+  - **Description**: Retrieves a list of all available games.
+  - **Response**: List<GameInfoAvailableDTO>
+  - **Status Codes**:
+    - 200 OK - Successfully retrieved the list of available games.
+        <br/>
+
+#### ChatRoomController
+    
+  - **@PostMapping**("/newChatroom")
+  - **Description**: Creates a new chat room for the game.
+  - **Request Body**: CreateGameRoomDTO
+  - **Response**: ChatRoomCreatedDTO
+  - **Status Codes**:
+    - 201 CREATED - Successfully created the chat room.
+        <br/>
+
+  - **@GetMapping**("/allChatrooms")
+  - **Description**: Retrieves a list of all chat rooms.
+  - **Response**: List<GameroomModel>
+  - **Status Codes**:
+    - 200 OK - Successfully retrieved the list of chat rooms.
+        <br/>
+
+#### GameController
+
+
+ - **@MessageMapping**("/textadventure.send/{gameId}")
+ - **Description**: Processes incoming messages for a text adventure game.
+ - **Status Codes**:
+    - 200 OK - Successfully processed the message.
+   
+
+#### Global Exceptions:
+**FileUploadException** - For errors during file upload.
+**FileEmptyException** - If the uploaded file is empty.
+**GameFileReadException** - If there's an error reading the adventure file.
+**AdventureNotFoundException** - If the adventure with the specified ID is not found.
+**AdventureNotAvailableException** - If the adventure is not available.
    
 
 

@@ -107,7 +107,7 @@ sequenceDiagram
   ```
 The header is needed in order to display the informations of the adventure correctly on the website.
 
-2. Here you start with the actual building of your project. You define your stages, where the start stage index **must equal 0**. This is ensures that the backend will know where to start. Every created stage (if it's not a conditional stage) must increase by one, otherwhise your adventure will end if no stage is found.
+2. Here you start with the actual building of your project. You define your stages, where the start stage index **must equal 0**. This is ensures that the backend will know where to start. Every created stage (if it's not a conditional stage) must increase by one, otherwise your adventure will end if no stage is found.
 
 *Example*:
 ```json

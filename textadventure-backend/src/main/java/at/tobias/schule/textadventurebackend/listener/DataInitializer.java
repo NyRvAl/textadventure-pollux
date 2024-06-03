@@ -11,12 +11,12 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class InitializerData {
+public class DataInitializer {
 
     private final ActionManager actionManager;
 
     @Autowired
-    public InitializerData(ActionManager actionManager) {
+    public DataInitializer(ActionManager actionManager) {
         this.actionManager = actionManager;
     }
 

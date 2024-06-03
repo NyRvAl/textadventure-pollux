@@ -28,7 +28,7 @@ public class TextInputAction extends TextActionData implements IInputAction {
 
     @Override
     public boolean input(ChatRoomMessageDTO text) {
-        if(text.message() != null && limit.contains(text.message())){
+        if(text.message() != null && limit.stream().anyMatch(element -> element.equalsIgnoreCase(text.message()))){
             input = text.message();
             return true;
         }

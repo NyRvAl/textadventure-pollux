@@ -132,12 +132,14 @@ public class FileService {
         String fileName = "";
         readWriteLock.readLock().lock();
         File dir = new File("upload");
+
         for(File file : Objects.requireNonNull(dir.listFiles())){
             try {
                 GameInfoDTO gameInfoDTO = readHeaderOfFile(file.getName());
-                if(gameInfoDTO.getDisplayName().equals(textAdventure))
+                if(gameInfoDTO.getDisplayName().equals(textAdventure)) {
                     fileName = file.getName();
-                break;
+                    break;
+                }
             }
             catch (GameFileReadException | GameHeaderNotReadableException ignored){
                 ignored.printStackTrace();

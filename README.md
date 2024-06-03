@@ -57,7 +57,7 @@ classDiagram
     }
     class ActionContext {
         +VariableManager getVariableManager()
-        +String getGameId()
+        +String getGameId() 
     }
     class TextInputAction {
         -List<String> limit

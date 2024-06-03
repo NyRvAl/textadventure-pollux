@@ -1,0 +1,131 @@
+/* General styling */
+.chatroom-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+}
+
+.room-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  border-radius: 10px;
+  overflow: hidden;
+  color: #ecf0f1;
+  font-family: Arial, sans-serif;
+  align-content: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.heading-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.clipboard-button {
+
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chatroom-container {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  max-width: 800px;
+  height: 70vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: #ecf0f1;
+  font-family: Arial, sans-serif;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Styling for each message */
+.message {
+  max-width: 70%;
+  align-self: flex-start;
+  padding: 10px 15px;
+  background-color: rgba(255, 215, 0, 0.8);
+  border-radius: 15px 15px 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #000;
+  word-wrap: break-word;
+  position: relative;
+}
+
+
+.message::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgba(255, 215, 0, 0.8) transparent transparent;
+}
+
+.input-container {
+  display: flex;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top: 1px solid #95a5a6;
+}
+
+/* Styling for the input field */
+input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 215, 0, 0.5);
+  color: #000;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input::placeholder {
+  color: black;
+}
+
+/* Additional styles for better UX */
+.input-container input:focus {
+  outline: none;
+  background-color: rgba(255, 215, 0, 0.7);
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 215, 0, 0.8);
+  border-radius: 4px;
+}

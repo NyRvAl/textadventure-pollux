@@ -1,0 +1,51 @@
+<div class="homepage-container">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to Text Adventure Selector</h1>
+      <p>Discover and join exciting text adventures. Explore various games created by our community and share your own adventures.</p>
+      <p-button (onClick)="exploreGame()" label="Explore Games"></p-button>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features-section">
+    <div class="headerCard">
+          <div class="features-grid">
+            <div class="feature-item">
+              <i class="pi pi-users feature-icon"></i>
+              <h3>Community Games</h3>
+              <p>Join a variety of text adventures created by the community.</p>
+            </div>
+            <div class="feature-item">
+              <i class="pi pi-star feature-icon"></i>
+              <h3>Rate & Review</h3>
+              <p>Rate and review games to help others find the best adventures.</p>
+            </div>
+            <div class="feature-item">
+              <i class="pi pi-pencil feature-icon"></i>
+              <h3>Create Your Own</h3>
+              <p>Create and share your own text adventure games.</p>
+            </div>
+            <div class="feature-item">
+              <i class="pi pi-desktop feature-icon"></i>
+              <h3>User-Friendly</h3>
+              <p>Interactive and user-friendly interface for a seamless experience.</p>
+            </div>
+          </div>
+
+    </div>
+  </div>
+
+  <!-- Call to Action Section -->
+  <div class="cta-section">
+    <div class="headerCard">
+      <p-card header="Get Started">
+        <ng-template pTemplate="content">
+          <p>Ready to dive into the world of text adventures? Click below to start exploring and joining games now!</p>
+          <p-button label="Join a Game" (onClick)="join()"></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>

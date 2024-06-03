@@ -1,0 +1,21 @@
+<div class="room-container">
+  <div class="heading-container">
+    <div class="heading-content">
+      <h3>Room ID: {{room}}</h3>
+      <p-button (onClick)="copyRoomCode()" icon="pi pi-copy" class="clipboard-button"></p-button>
+    </div>
+  </div>
+
+  <div class="chatroom-wrapper">
+    <div class="chatroom-container">
+      <div class="messages" #messagesContainer>
+        <div *ngFor="let message of messages" class="message">
+          {{ message }}
+        </div>
+      </div>
+      <div class="input-container">
+        <input [(ngModel)]="userInput" (keyup.enter)="sendMessage(userInput)" placeholder="Type your response here...">
+      </div>
+    </div>
+  </div>
+</div>

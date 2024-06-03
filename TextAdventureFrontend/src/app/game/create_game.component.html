@@ -1,0 +1,110 @@
+<div class="headerCard">
+  <p-card header="Game">
+    <ng-template pTemplate="content">
+      <p-button label="Join" (onClick)="join()"></p-button>
+    </ng-template>
+  </p-card>
+</div>
+
+<p-dialog
+  header="Create Game"
+  [(visible)]="createDialog"
+  (onHide)="createDialog = false"
+  [modal]="true"
+  [style]="{'min-height': '250px', width: '90vw', 'max-width': '500px'}"
+  [baseZIndex]="1000"
+  [draggable]="false"
+  [resizable]="false"
+  class="ta-p-dialog-join-game">
+  <div class="flex flex-wrap justify-center sm:justify-start gap-5 item-container">
+    <p-floatLabel class="flex-item">
+      <input pInputText [(ngModel)]="userName" id="usernameCreate" type="text"/>
+      <label for="usernameCreate">Username</label>
+    </p-floatLabel>
+  </div>
+  <div class="flex flex-wrap justify-center sm:justify-start gap-5 item-container">
+    <p-button class="flex-item" label="Create" (onClick)="createGame()"></p-button>
+  </div>
+</p-dialog>
+
+<p-dialog
+  header="Join Game"
+  [(visible)]="joinGameDialog"
+  (onHide)="joinGameDialog = false"
+  [modal]="true"
+  [style]="{'min-height': '250px', width: '90vw', 'max-width': '500px'}"
+  [baseZIndex]="1000"
+  [draggable]="false"
+  [resizable]="false"
+  class="ta-p-dialog-join-game">
+  <div class="flex flex-wrap justify-center sm:justify-start gap-5 item-container">
+    <p-floatLabel class="flex-item">
+      <input pInputText [(ngModel)]="value" id="username" type="text"/>
+      <label for="username">Username</label>
+    </p-floatLabel>
+    <p-floatLabel class="flex-item">
+      <input pInputText type="text" id="code" [(ngModel)]="gamecode">
+      <label for="code">Gamecode</label>
+    </p-floatLabel>
+  </div>
+  <div class="flex flex-wrap justify-center sm:justify-start gap-5 item-container">
+    <p-button (onClick)="joinGame()" class="flex-item" label="Join"></p-button>
+  </div>
+</p-dialog>
+
+<p-dialog
+  header="Rate Game"
+  [(visible)]="ratingDialog"
+  (onHide)="ratingDialog = false"
+  [modal]="true"
+  [style]="{'min-height': '150px', width: '90vw', 'max-width': '500px'}"
+  [baseZIndex]="1000"
+  [draggable]="false"
+  [resizable]="false"
+  class="ta-p-dialog-join-game">
+  <div class="ta-rating-container">
+    <span class="flex-item">Wie hat dir das Spiel gefallen?</span>
+    <p-rating class="flex-item"></p-rating>
+    <p-button [style]="{'margin-top': '20px'}" class="flex-item" label="Submit"></p-button>
+  </div>
+</p-dialog>
+
+<div class="gridLayout">
+  <p-table [value]="values" [tableStyle]="{'width': '100%'}" [style.grid-area]="'content'">
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        Games
+        <p-button (onClick)="fetchAvailableGames()" icon="pi pi-refresh"></p-button>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Author</th>
+        <th class="hide-on-small">Reviews</th>
+        <th class="hide-on-small">Active</th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-value>
+      <tr>
+        <td>
+          <div *ngIf="value.tag != null">
+            <p-tag [value]="value?.tag" [severity]="getSeverity(value?.tag)"></p-tag>
+          </div>
+        </td>
+        <td>{{value.name}}</td>
+        <td>{{value.author}}</td>
+        <td class="hide-on-small">
+          <p-rating [ngModel]="value.rating" [readonly]="true" [cancel]="false"></p-rating>
+        </td>
+        <td class="hide-on-small"><i [class]="getActiveIcon(value.available)"></i></td>
+        <td>
+          <p-splitButton [disabled]="!value.available" appendTo="body" label="Create" icon="pi pi-check" (onClick)="create(value.id)"
+                         [model]="createOpt"></p-splitButton>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

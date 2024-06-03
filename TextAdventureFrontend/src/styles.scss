@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/arya-orange/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+body{
+  background: black;
+  margin: 0;
+  background-image: url('assets/5442674.svg'); /* Replace 'path/to/your/image.png' with the path to your image file */
+  background-size: cover; /* Adjust background-size as needed */
+  background-position: center;
+  stroke: none;
+  stroke-width: 0;
+}

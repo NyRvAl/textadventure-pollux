@@ -1,0 +1,203 @@
+{
+  "author": "Gave",
+  "displayName": "QuizMaster",
+  "adventure": [
+    {
+      "id": 0,
+      "stage": 0,
+      "requirements": [],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Willkommen zum Quiz! Bist du bereit, dein Wissen zu testen?"
+        },
+        {
+          "action": "SLEEP",
+          "time": 2000
+        },
+        {
+          "action": "WRITE",
+          "text": "Frage 1: Was ist die Hauptstadt von Frankreich? (Antworte mit 'Paris', 'London' oder 'Berlin')"
+        },
+        {
+          "action": "WAITING_FOR_INPUT",
+          "limit": ["Paris", "London", "Berlin"],
+          "setVariables": ["q1Answer={input}"]
+        },
+        {
+          "action": "WRITE",
+          "text": "Deine Antwort: {{q1Answer}}"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "stage": 1,
+      "requirements": [
+        {
+          "variable": "q1Answer",
+          "value": "Paris"}
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Richtig! Weiter zur nächsten Frage."
+        },
+        {
+          "action": "SLEEP",
+          "time": 2000
+        },
+        {
+          "action": "WRITE",
+          "text": "Frage 2: Welches Element hat das chemische Symbol 'O'? (Antworte mit 'Sauerstoff', 'Wasserstoff' oder 'Gold')"
+        },
+        {
+          "action": "WAITING_FOR_INPUT",
+          "limit": ["Sauerstoff", "Wasserstoff", "Gold"],
+          "setVariables": ["q2Answer={input}"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "stage": 2,
+      "requirements": [
+        {
+          "variable": "q2Answer",
+          "value": "Sauerstoff"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Richtig! Letzte Frage."
+        },
+        {
+          "action": "SLEEP",
+          "time": 2000
+        },
+        {
+          "action": "WRITE",
+          "text": "Frage 3: Welcher Planet ist bekannt als der Rote Planet? (Antworte mit 'Mars', 'Jupiter' oder 'Venus')"
+        },
+        {
+          "action": "WAITING_FOR_INPUT",
+          "limit": ["Mars", "Jupiter", "Venus"],
+          "setVariables": ["q3Answer={input}"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "stage": 3,
+      "requirements": [
+        {
+          "variable": "q3Answer",
+          "value": "Mars"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Richtig! Du hast das Quiz erfolgreich abgeschlossen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "stage": 1,
+      "requirements": [
+        {
+          "variable": "q1Answer",
+          "value": "London"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Leider falsch! Die Hauptstadt von Frankreich ist Paris."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "stage": 1,
+      "requirements": [
+        {
+          "variable": "q1Answer",
+          "value": "Berlin"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Leider falsch! Die Hauptstadt von Frankreich ist Paris."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "stage": 2,
+      "requirements": [
+        {
+          "variable": "q2Answer",
+          "value": "Wasserstoff"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Leider falsch! Das chemische Symbol 'O' steht für Sauerstoff."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "stage": 2,
+      "requirements": [
+        {
+          "variable": "q2Answer",
+          "value": "Gold"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Leider falsch! Das chemische Symbol 'O' steht für Sauerstoff."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "stage": 3,
+      "requirements": [
+        {
+          "variable": "q3Answer",
+          "value": "Jupiter"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Leider falsch! Der Rote Planet ist Mars."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "stage": 3,
+      "requirements": [
+        {
+          "variable": "q3Answer",
+          "value": "Venus"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Leider falsch! Der Rote Planet ist Mars."
+        }
+      ]
+    }
+  ]
+}

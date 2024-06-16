@@ -26,7 +26,5 @@ public class DataInitializer {
         actionManager.registerAction(new TextInputAction());
         actionManager.registerAction(new RandomNumberAction());
         actionManager.registerAction(new TimeOutAction());
-
-
     }
 }

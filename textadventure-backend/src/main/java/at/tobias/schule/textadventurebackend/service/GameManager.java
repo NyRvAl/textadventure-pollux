@@ -1,10 +1,8 @@
 package at.tobias.schule.textadventurebackend.service;
 
 
-import at.tobias.schule.textadventurebackend.dto.adventure.IInputAction;
 import at.tobias.schule.textadventurebackend.dto.adventure.TextActionData;
 import at.tobias.schule.textadventurebackend.dto.adventure.TextAdventureData;
-import at.tobias.schule.textadventurebackend.dto.adventure.actions.ActionContext;
 import at.tobias.schule.textadventurebackend.dto.request.ChatRoomMessageDTO;
 import at.tobias.schule.textadventurebackend.dto.request.CreateGameRoomDTO;
 import at.tobias.schule.textadventurebackend.dto.response.OutputDTO;

@@ -1,4 +1,5 @@
-{"author": "Karli",
+{
+  "author": "Karli",
   "displayName": "Juli stinkt",
   "adventure": [
     {
@@ -28,8 +29,13 @@
         },
         {
           "action": "WAITING_FOR_INPUT",
-          "limit": ["Mauer", "Königsmund"],
-          "setVariables": ["chosenPath={input}"]
+          "limit": [
+            "Mauer",
+            "Königsmund"
+          ],
+          "setVariables": [
+            "chosenPath={input}"
+          ]
         }
       ]
     },
@@ -65,8 +71,13 @@
         },
         {
           "action": "WAITING_FOR_INPUT",
-          "limit": ["überqueren", "zurück"],
-          "setVariables": ["wallDecision={input}"]
+          "limit": [
+            "überqueren",
+            "zurück"
+          ],
+          "setVariables": [
+            "wallDecision={input}"
+          ]
         }
       ]
     },
@@ -84,7 +95,9 @@
           "action": "RANDOM_NUMBER",
           "min": 1,
           "max": 2,
-          "setVariables": ["randomEvent={random}"]
+          "setVariables": [
+            "randomEvent={random}"
+          ]
         },
         {
           "action": "WRITE",

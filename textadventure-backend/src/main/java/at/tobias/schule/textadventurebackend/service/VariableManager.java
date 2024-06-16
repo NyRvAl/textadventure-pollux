@@ -10,11 +10,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
+
 public class VariableManager {
     public static final Pattern GLOBAL_VARIABLE = Pattern.compile("\\{\\{[A-Za-z]+}}", Pattern.CASE_INSENSITIVE);
     public static final Pattern LOCAL_VARIABLE = Pattern.compile("\\{[A-Za-z]+}", Pattern.CASE_INSENSITIVE);
-
-    ;
     private final Map<String,Map<String, Object>> variables = new ConcurrentHashMap<>();
 
     public Map<String, Object> getVariables(String gameId) {
@@ -39,5 +38,8 @@ public class VariableManager {
             text = text.replace(segment, newValue);
         }
         return text;
+    }
+    public void clearVariables(String gameId){
+        variables.remove(gameId);
     }
 }

@@ -67,7 +67,7 @@ public class FileService {
     @Cacheable("game")
     public String readFile(String name) {
         String path = String.format("upload/%s", name);
-        String content = "n.a";
+        String content;
         readWriteLock.readLock().lock();
         try {
             content = Files.readString(Path.of(path));
@@ -141,8 +141,8 @@ public class FileService {
                     break;
                 }
             }
-            catch (GameFileReadException | GameHeaderNotReadableException ignored){
-                ignored.printStackTrace();
+            catch (GameFileReadException | GameHeaderNotReadableException e){
+                e.printStackTrace();
             }
         }
         readWriteLock.readLock().unlock();

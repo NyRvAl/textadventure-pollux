@@ -10,7 +10,6 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.Clock;
@@ -21,9 +20,9 @@ import java.util.Objects;
 @Service
 @Slf4j
 public class AdventureGameService implements IAdventureService {
-    private AdventureRepository adventureRepository;
+    private final AdventureRepository adventureRepository;
     @Getter
-    private FileService fileService;
+    private final FileService fileService;
 
     @Autowired
     public AdventureGameService(AdventureRepository adventureRepository, FileService fileService) {

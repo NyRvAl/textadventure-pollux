@@ -30,6 +30,15 @@
           "action": "WAITING_FOR_INPUT",
           "limit": ["Mauer", "Königsmund"],
           "setVariables": ["chosenPath={input}"]
+        },
+        {
+          "action": "WRITE",
+          "text": "Deine Eingabe {{chosenPath}}"
+        }
+      ,
+        {
+          "action": "WRITE",
+          "text": "text {text}"
         }
       ]
     },
@@ -83,7 +92,7 @@
         {
           "action": "RANDOM_NUMBER",
           "min": 1,
-          "max": 2,
+          "max": 20,
           "setVariables": ["randomEvent={random}"]
         },
         {
@@ -110,7 +119,8 @@
         },
         {
           "variable": "randomEvent",
-          "value": 1
+          "value": 10,
+          "option" : "GREATER_EQUALS"
         }
       ],
       "actions": [
@@ -130,7 +140,8 @@
         },
         {
           "variable": "randomEvent",
-          "value": 2
+          "value": 10,
+          "option" : "LOWER"
         }
       ],
       "actions": [

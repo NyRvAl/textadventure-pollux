@@ -23,9 +23,9 @@ import java.util.List;
 @Controller
 @Slf4j
 public class GameController {
-    private GameManager gameManager;
+    private final GameManager gameManager;
 
-    private SimpMessagingTemplate messagingTemplate;
+    private final SimpMessagingTemplate messagingTemplate;
 
     @Autowired
     public GameController(GameManager gameManager, SimpMessagingTemplate simpMessagingTemplate) {
@@ -57,7 +57,6 @@ public class GameController {
     }
 
     public void handleJoinsLeaves(ChatRoomMessageDTO chatRoomMessageDTO, String gameId) {
-        UserChangedDTO userChangedDTO = new UserChangedDTO(chatRoomMessageDTO.user(), String.valueOf(chatRoomMessageDTO.type()));
         TextOutputAction textOutputAction = new TextOutputAction();
         if (chatRoomMessageDTO.type() == ChatRoomMessageDTO.MessageType.JOIN)
             textOutputAction.setText(String.format("%s ist gejoined", chatRoomMessageDTO.user()));

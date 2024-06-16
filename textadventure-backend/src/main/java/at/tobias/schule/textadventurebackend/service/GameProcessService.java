@@ -10,15 +10,17 @@ import at.tobias.schule.textadventurebackend.dto.adventure.actions.RandomNumberA
 import at.tobias.schule.textadventurebackend.dto.request.ChatRoomMessageDTO;
 import at.tobias.schule.textadventurebackend.exception.GameFileReadException;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.TextAction;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @Getter
+@Slf4j
+
 public class GameProcessService {
 
     private final VariableManager variableManager;
@@ -29,7 +31,7 @@ public class GameProcessService {
     }
 
     public List<TextActionData> continueAdventure(TextAdventureData textAdventureData, String gameId) {
-        TextStageData currentStage = null;
+        TextStageData currentStage;
         List<TextActionData> toVisit = new ArrayList<>();
         while (true) {
             if (textAdventureData.getCurrentStageIndex() == 0)
@@ -64,14 +66,13 @@ public class GameProcessService {
                 }
             }
         }
-
-
+        variableManager.clearVariables(gameId);
         return toVisit;
 
     }
 
     public TextActionData handleInput(TextAdventureData textAdventureData, String gameId, ChatRoomMessageDTO chatRoomMessageDTO) {
-        TextStageData currentStage = null;
+        TextStageData currentStage;
         currentStage = findStage(textAdventureData, gameId, textAdventureData.getCurrentStageIndex() - 1);
 
         for (TextActionData textActionData : currentStage.getActions()) {
@@ -124,9 +125,8 @@ public class GameProcessService {
     }
 
     public boolean checkRequirements(TextStageData textStageData, String gameId) {
-        return textStageData.getRequirements().stream().allMatch(requirement ->
-                variableManager.getVariables(gameId).getOrDefault(requirement.getVariable(), "")
-                        .equals(requirement.getValue()));
+        return textStageData.getRequirements().stream().allMatch(requirement -> requirement
+                .compareTo(variableManager.getVariables(gameId).getOrDefault(requirement.getVariable(), "")));
 
     }
 

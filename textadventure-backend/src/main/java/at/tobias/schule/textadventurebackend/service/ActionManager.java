@@ -9,10 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class ActionManager {
-    private Map<String,Class<? extends TextActionData>> registeredActions = new ConcurrentHashMap<>();
-
-
-
+    private final Map<String,Class<? extends TextActionData>> registeredActions = new ConcurrentHashMap<>();
 
     public void registerAction(TextActionData textAction){
         registeredActions.put(textAction.deserializeKey(),textAction.getClass());

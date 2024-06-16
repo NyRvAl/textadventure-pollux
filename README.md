@@ -496,6 +496,8 @@ Added the option the change how a requirement determines if its fullfilled. The 
       ],
 ```
 In this case, the requirement is met when the randomEvent variable has a value greater or equal 10.
+***
+
 ## Results
 
 

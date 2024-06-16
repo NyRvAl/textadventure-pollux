@@ -11,7 +11,7 @@ public class AddFunction extends VariableFunction{
     }
 
     @Override
-    Map<String, Class<?>> requiredParams() {
+    public Map<String, Class<?>> requiredParams() {
         Map<String,Class<?>> params = new HashMap<>();
         params.put("var",String.class);
         params.put("add", Integer.class);
@@ -19,15 +19,14 @@ public class AddFunction extends VariableFunction{
     }
 
     @Override
-    void onFunctionUse(FunctionContext functionContext) {
+    public void onFunctionUse(FunctionContext functionContext) {
         String variableToAdd = (String) functionContext.params().get("var");
         int toAdd = (Integer) functionContext.params().get("add");
         String gameId = functionContext.gameId();
-        if(functionContext.variableManager().getVariables(gameId).get(variableToAdd) instanceof Integer integer){
-            integer+=toAdd;
-            functionContext.variableManager().getVariables(gameId).put(variableToAdd,integer);
+        if(functionContext.variableManager().getVariables(gameId).get(variableToAdd) != null && functionContext.variableManager().getVariables(gameId).get(variableToAdd) instanceof Integer integer){
+            toAdd+=integer;
         }
-
+        functionContext.variableManager().setVariables(gameId,variableToAdd,toAdd);
 
     }
 }

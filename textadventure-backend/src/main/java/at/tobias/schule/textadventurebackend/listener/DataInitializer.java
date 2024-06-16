@@ -4,6 +4,7 @@ import at.tobias.schule.textadventurebackend.dto.adventure.actions.RandomNumberA
 import at.tobias.schule.textadventurebackend.dto.adventure.actions.TextInputAction;
 import at.tobias.schule.textadventurebackend.dto.adventure.actions.TextOutputAction;
 import at.tobias.schule.textadventurebackend.dto.adventure.actions.TimeOutAction;
+import at.tobias.schule.textadventurebackend.dto.adventure.function.AddFunction;
 import at.tobias.schule.textadventurebackend.service.ActionManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -26,5 +27,6 @@ public class DataInitializer {
         actionManager.registerAction(new TextInputAction());
         actionManager.registerAction(new RandomNumberAction());
         actionManager.registerAction(new TimeOutAction());
+        actionManager.registerVariableFunction(new AddFunction());
     }
 }

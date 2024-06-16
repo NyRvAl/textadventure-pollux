@@ -16,11 +16,23 @@
         },
         {
           "action": "WRITE",
-          "text": "Der Wind trägt das Heulen der Wölfe zu dir herüber."
+          "text": "Der Wind trägt das Heulen der Wölfe zu dir herüber.",
+          "setVariables": ["$ADD(var=test,add=5)"]
+
+        },
+        {
+          "action": "WRITE",
+          "text": "Der Wind trägt das Heulen der Wölfe zu dir herüber.",
+          "setVariables": ["$ADD(var=test,add=-5)"]
+
         },
         {
           "action": "SLEEP",
           "time": 2000
+        },
+        {
+          "action": "WRITE",
+          "text": "Outcome Add: {{test}}"
         },
         {
           "action": "WRITE",

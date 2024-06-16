@@ -14,8 +14,8 @@ public abstract class VariableFunction {
     }
 
 
-    abstract Map<String,Class<?>> requiredParams();
-    abstract void onFunctionUse(FunctionContext functionContext);
+    public abstract Map<String,Class<?>> requiredParams();
+    public abstract void onFunctionUse(FunctionContext functionContext);
 
 
 

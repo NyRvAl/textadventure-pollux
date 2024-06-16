@@ -187,7 +187,7 @@ Fields, only available in some actions:
 
 - **output action**
     - text
-        - the replaced text with reolved variables
+        - the replaced text with resolved variables
 - **input action**
     - input
         - the input provided by the user

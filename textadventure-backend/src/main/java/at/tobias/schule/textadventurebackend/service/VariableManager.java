@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class VariableManager {
     public static final Pattern GLOBAL_VARIABLE = Pattern.compile("\\{\\{[A-Za-z]+}}", Pattern.CASE_INSENSITIVE);
     public static final Pattern LOCAL_VARIABLE = Pattern.compile("\\{[A-Za-z]+}", Pattern.CASE_INSENSITIVE);
-    public static final Pattern FUNCTION = Pattern.compile("\\$[A-Za-z0-9]+\\([^)]*\\)");
+    public static final Pattern FUNCTION = Pattern.compile("\\$[A-Za-z0-9]+\\([^)]*\\)", Pattern.CASE_INSENSITIVE);
     private final Map<String,Map<String, Object>> variables = new ConcurrentHashMap<>();
 
     public Map<String, Object> getVariables(String gameId) {

@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\statusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:statusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -11,19 +19,15 @@
       "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:adventuregamemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\textadventureadminwpf.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:textadventureadminwpf.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\gameinfoavailabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:gameinfoavailabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\textadventureadminwpf.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:textadventureadminwpf.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -47,7 +51,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,19 +59,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "StatusDTO.cs",
+              "DocumentMoniker": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\StatusDTO.cs",
+              "RelativeDocumentMoniker": "StatusDTO.cs",
+              "ToolTip": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\StatusDTO.cs",
+              "RelativeToolTip": "StatusDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T16:30:34.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAEwEoAAAAkAAAA",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAkwIMAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T18:39:10.447Z"
+              "WhenOpened": "2024-05-31T18:39:10.447Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -79,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "GameInfoAvailableDTO.cs",
               "DocumentMoniker": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\GameInfoAvailableDTO.cs",
               "RelativeDocumentMoniker": "GameInfoAvailableDTO.cs",
@@ -87,11 +105,12 @@
               "RelativeToolTip": "GameInfoAvailableDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T18:47:48.894Z"
+              "WhenOpened": "2024-05-31T18:47:48.894Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AdventureGameModel.cs",
               "DocumentMoniker": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\AdventureGameModel.cs",
               "RelativeDocumentMoniker": "AdventureGameModel.cs",
@@ -99,11 +118,12 @@
               "RelativeToolTip": "AdventureGameModel.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAAkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T18:52:24.286Z"
+              "WhenOpened": "2024-05-31T18:52:24.286Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "TextAdventureAdminWPF.csproj",
               "DocumentMoniker": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj",
               "RelativeDocumentMoniker": "TextAdventureAdminWPF.csproj",
@@ -115,18 +135,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "TextAdventureAdminWPF",
               "DocumentMoniker": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj",
               "RelativeDocumentMoniker": "TextAdventureAdminWPF.csproj",
               "ToolTip": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj",
               "RelativeToolTip": "TextAdventureAdminWPF.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-31T19:44:26.294Z"
+              "WhenOpened": "2024-05-31T19:44:26.294Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Microsoft.NET.Sdk.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.targets",
@@ -138,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Microsoft.NET.TargetFrameworkInference.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
@@ -150,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Microsoft.WinFX.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk.WindowsDesktop\\targets\\Microsoft.WinFX.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk.WindowsDesktop\\targets\\Microsoft.WinFX.targets",
@@ -162,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "GameInfoDTO.cs",
               "DocumentMoniker": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\GameInfoDTO.cs",
               "RelativeDocumentMoniker": "GameInfoDTO.cs",

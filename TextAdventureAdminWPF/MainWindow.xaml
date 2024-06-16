@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextAdventureAdminWPF"
-        xmlns:controls="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" Icon="/k3_HyB.png">
     <Grid>
@@ -30,7 +29,7 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <!-- CheckBox to enable/disable text adventure -->
-                        <CheckBox Margin="0,0,10,0" IsChecked="{Binding AdventureGameModel.Available}" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                        <CheckBox Margin="0,0,10,0" IsChecked="{Binding AdventureGameModel.Available}" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Tag="{Binding AdventureGameModel.Id}"/>
                         <!-- TextBlock to display text adventure information -->
                         <StackPanel>
                             <TextBlock Text="{Binding AdventureGameModel.Id, StringFormat='ID: {0}'}" Margin="0,0,0,5"/>

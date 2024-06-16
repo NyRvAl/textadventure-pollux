@@ -1,5 +1,6 @@
-{"author": "Gave",
-  "displayName": "GoT",
+{
+  "author": "QuizMaster",
+  "displayName": "Game of Thrones Quiz",
   "adventure": [
     {
       "id": 0,
@@ -8,7 +9,7 @@
       "actions": [
         {
           "action": "WRITE",
-          "text": "Willkommen in Westeros! Du befindest dich in den kalten Wäldern des Nordens."
+          "text": "Welcome to the Game of Thrones Quiz! Answer the following questions to test your knowledge."
         },
         {
           "action": "SLEEP",
@@ -16,41 +17,19 @@
         },
         {
           "action": "WRITE",
-          "text": "Der Wind trägt das Heulen der Wölfe zu dir herüber.",
-          "setVariables": ["$ADD(var=test,add=5)"]
-
-        },
-        {
-          "action": "WRITE",
-          "text": "Der Wind trägt das Heulen der Wölfe zu dir herüber.",
-          "setVariables": ["$ADD(var=test,add=-5)"]
-
-        },
-        {
-          "action": "SLEEP",
-          "time": 2000
-        },
-        {
-          "action": "WRITE",
-          "text": "Outcome Add: {{test}}"
-        },
-        {
-          "action": "WRITE",
-          "text": "Vor dir siehst du zwei Wege. Möchtest du den Weg zur Mauer oder den Weg zum Königsmund nehmen? (Antworte mit 'Mauer' oder 'Königsmund')"
+          "text": "Question 1: Who is known as the 'Mother of Dragons'? (Type 'Cersei', 'Sansa', 'Daenerys', or 'Arya')"
         },
         {
           "action": "WAITING_FOR_INPUT",
-          "limit": ["Mauer", "Königsmund"],
-          "setVariables": ["chosenPath={input}"]
-        },
-        {
-          "action": "WRITE",
-          "text": "Deine Eingabe {{chosenPath}}"
-        }
-      ,
-        {
-          "action": "WRITE",
-          "text": "text {text}"
+          "limit": [
+            "Cersei",
+            "Sansa",
+            "Daenerys",
+            "Arya"
+          ],
+          "setVariables": [
+            "answer1={input}"
+          ]
         }
       ]
     },
@@ -59,86 +38,60 @@
       "stage": 1,
       "requirements": [
         {
-          "variable": "chosenPath",
-          "value": "Mauer"
+          "variable": "answer1",
+          "value": "Daenerys"
         }
       ],
       "actions": [
         {
           "action": "WRITE",
-          "text": "Du begibst dich zur Mauer, wo die Nachtwache über das Reich wacht."
-        },
-        {
-          "action": "SLEEP",
-          "time": 2000
-        },
-        {
-          "action": "WRITE",
-          "text": "Die Luft ist kalt und schneidet wie ein Dolch durch deine Kleidung."
-        },
-        {
-          "action": "SLEEP",
-          "time": 2000
-        },
-        {
-          "action": "WRITE",
-          "text": "Möchtest du die Mauer überqueren und nach Norden reisen oder zurück in den Norden gehen? (Antworte mit 'überqueren' oder 'zurück')"
-        },
-        {
-          "action": "WAITING_FOR_INPUT",
-          "limit": ["überqueren", "zurück"],
-          "setVariables": ["wallDecision={input}"]
+          "text": "Correct! Daenerys is known as the 'Mother of Dragons'.",
+          "setVariables": [
+            "$ADD(var=score,add=1)"
+          ]
         }
       ]
     },
     {
       "id": 2,
-      "stage": 2,
+      "stage": 1,
       "requirements": [
         {
-          "variable": "wallDecision",
-          "value": "überqueren"
+          "variable": "answer1",
+          "value": "Daenerys",
+          "option": "NOT_EQUAL"
         }
       ],
       "actions": [
         {
-          "action": "RANDOM_NUMBER",
-          "min": 1,
-          "max": 20,
-          "setVariables": ["randomEvent={random}"]
-        },
-        {
           "action": "WRITE",
-          "text": "Du überquerst die Mauer und triffst auf eine Gruppe Wildlinge."
-        },
-        {
-          "action": "SLEEP",
-          "time": 2000
-        },
-        {
-          "action": "WRITE",
-          "text": "Generierte Zahl: {{randomEvent}}"
+          "text": "Incorrect. The correct answer is Daenerys.",
+          "setVariables": [
+            "$ADD(var=score,add=0)"
+          ]
         }
       ]
     },
     {
       "id": 3,
-      "stage": 3,
-      "requirements": [
-        {
-          "variable": "wallDecision",
-          "value": "überqueren"
-        },
-        {
-          "variable": "randomEvent",
-          "value": 10,
-          "option" : "GREATER_EQUALS"
-        }
-      ],
+      "stage": 2,
+      "requirements": [],
       "actions": [
         {
           "action": "WRITE",
-          "text": "Nach einem heftigen Kampf überlebst du knapp!"
+          "text": "Question 2: What is the name of Jon Snow's direwolf? (Type 'Ghost', 'Nymeria', 'Shaggydog', or 'Summer')"
+        },
+        {
+          "action": "WAITING_FOR_INPUT",
+          "limit": [
+            "Ghost",
+            "Nymeria",
+            "Shaggydog",
+            "Summer"
+          ],
+          "setVariables": [
+            "answer2={input}"
+          ]
         }
       ]
     },
@@ -147,19 +100,110 @@
       "stage": 3,
       "requirements": [
         {
-          "variable": "wallDecision",
-          "value": "überqueren"
-        },
-        {
-          "variable": "randomEvent",
-          "value": 10,
-          "option" : "LOWER"
+          "variable": "answer2",
+          "value": "Ghost"
         }
       ],
       "actions": [
         {
           "action": "WRITE",
-          "text": "Eine Lawine erfasst dich. Das Abenteuer endet hier."
+          "text": "Correct! Jon Snow's direwolf is named Ghost.",
+          "setVariables": [
+            "$ADD(var=score,add=1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "stage": 3,
+      "requirements": [
+        {
+          "variable": "answer2",
+          "value": "Ghost",
+          "option": "NOT_EQUAL"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Incorrect. The correct answer is Ghost.",
+          "setVariables": [
+            "$ADD(var=score,add=0)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "stage": 4,
+      "requirements": [],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Question 3: Who was responsible for the creation of the Night King? (Type 'The Children of the Forest', 'The First Men', 'The White Walkers', or 'The Wildlings')"
+        },
+        {
+          "action": "WAITING_FOR_INPUT",
+          "limit": [
+            "The Children of the Forest",
+            "The First Men",
+            "The White Walkers",
+            "The Wildlings"
+          ],
+          "setVariables": [
+            "answer3={input}"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "stage": 5,
+      "requirements": [
+        {
+          "variable": "answer3",
+          "value": "The Children of the Forest"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Correct! The Children of the Forest created the Night King.",
+          "setVariables": [
+            "$ADD(var=score,add=1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "stage": 5,
+      "requirements": [
+        {
+          "variable": "answer3",
+          "value": "The Children of the Forest",
+          "option": "NOT_EQUAL"
+        }
+      ],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "Incorrect. The correct answer is The Children of the Forest.",
+          "setVariables": [
+            "$ADD(var=score,add=0)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "stage": 6,
+      "requirements": [],
+      "actions": [
+        {
+          "action": "WRITE",
+          "text": "You've completed the quiz! Your final score is {{score}} out of 3."
         }
       ]
     }

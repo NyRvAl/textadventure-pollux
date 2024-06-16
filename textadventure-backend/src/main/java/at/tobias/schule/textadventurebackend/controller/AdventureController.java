@@ -2,6 +2,7 @@ package at.tobias.schule.textadventurebackend.controller;
 
 
 import at.tobias.schule.textadventurebackend.dto.request.ReviewDTO;
+import at.tobias.schule.textadventurebackend.dto.request.StatusDTO;
 import at.tobias.schule.textadventurebackend.dto.response.GameInfoAvailableDTO;
 import at.tobias.schule.textadventurebackend.service.AdventureGameService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,11 @@ public class AdventureController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void review(@RequestBody ReviewDTO reviewDTO){
         adventureGameService.addReview(reviewDTO);
+    }
+    @PutMapping("/status")
+    @ResponseStatus(HttpStatus.OK)
+    public void changeSatus(@RequestBody StatusDTO statusDTO){
+        adventureGameService.changeStatus(statusDTO);
     }
     @GetMapping("/availableGames")
     @ResponseStatus(HttpStatus.OK)

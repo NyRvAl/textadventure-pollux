@@ -11,7 +11,6 @@ import at.tobias.schule.textadventurebackend.dto.adventure.function.FunctionCont
 import at.tobias.schule.textadventurebackend.dto.adventure.function.VariableFunction;
 import at.tobias.schule.textadventurebackend.dto.request.ChatRoomMessageDTO;
 import at.tobias.schule.textadventurebackend.exception.GameFileReadException;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,6 +101,8 @@ public class GameProcessService {
                     executeSetVariables(textActionData, gameId);
                     textActionData.setVisited(true);
                 }
+                else
+                    return null;
                 return textActionData;
             }
         }
@@ -143,7 +144,7 @@ public class GameProcessService {
             return;
         textActionData.getSetVariables().forEach(variable -> {
                     if (VariableManager.FUNCTION.matcher(variable).matches())
-                        executeFunctions(textActionData, gameId, variable);
+                        executeFunctions(gameId, variable);
                     else {
                         String variables = variable.split("=")[0];
                         String assignmentRaw = variable.split("=")[1];
@@ -159,7 +160,7 @@ public class GameProcessService {
         );
     }
 
-    public void executeFunctions(TextActionData textActionData, String gameId, String variable) {
+    public void executeFunctions(String gameId, String variable) {
         variable = variable.replace("$", "");
         String functionName = variable.split("\\(")[0];
         String params = variable.replace(functionName, "").replace("(", "").replace(")", "");
@@ -186,6 +187,7 @@ public class GameProcessService {
                     try {
                         value = Integer.parseInt(argsValue);
                     } catch (NumberFormatException e) {
+                        return;
                     }
                 }
             }

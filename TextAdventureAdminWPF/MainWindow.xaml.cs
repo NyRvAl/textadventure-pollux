@@ -50,16 +50,26 @@ namespace TextAdventureAdminWPF
                 // Add your logic to handle the uploaded file
             }
         }
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        private async void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            // Open file dialog to select .json file
-
+            CheckBox checkBox = sender as CheckBox;
+            if (checkBox != null && checkBox.Tag != null)
+            {
+                string gameId = checkBox.Tag.ToString();
+                await ChangeGameStatus(gameId, true); // true indicates the game is now available
+            }
         }
-        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+
+        private async void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            // Open file dialog to select .json file
-
+            CheckBox checkBox = sender as CheckBox;
+            if (checkBox != null && checkBox.Tag != null)
+            {
+                string gameId = checkBox.Tag.ToString();
+                await ChangeGameStatus(gameId, false); // false indicates the game is now unavailable
+            }
         }
+
         private async void FetchAvailableGames()
         {
             try
@@ -117,6 +127,45 @@ namespace TextAdventureAdminWPF
                 MessageBox.Show($"Error uploading file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        private async Task ChangeGameStatus(string gameId, bool status)
+        {
+            try
+            {
+                // Create StatusDTO object
+                StatusDTO statusDTO = new StatusDTO
+                {
+                    Id = long.Parse(gameId), // Assuming gameId is a long in the DTO
+                    Status = status
+                };
+
+                // Serialize StatusDTO to JSON
+                string json = JsonSerializer.Serialize(statusDTO);
+
+                // Prepare HTTP request message
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, "http://localhost:5000/status");
+                request.Content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                // Send HTTP PUT request
+                HttpResponseMessage response = await httpClient.SendAsync(request);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show($"Game with ID {gameId} status changed successfully.");
+                    // Optionally, update UI or handle success
+                }
+                else
+                {
+                    MessageBox.Show($"Failed to change game status: {response.StatusCode}");
+                    // Handle failure or display error message
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error changing game status: {ex.Message}");
+                // Handle exception or display error message
+            }
+        }
+
     }
 }
 

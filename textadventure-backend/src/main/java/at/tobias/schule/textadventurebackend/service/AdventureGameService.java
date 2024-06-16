@@ -2,6 +2,7 @@ package at.tobias.schule.textadventurebackend.service;
 
 
 import at.tobias.schule.textadventurebackend.dto.request.ReviewDTO;
+import at.tobias.schule.textadventurebackend.dto.request.StatusDTO;
 import at.tobias.schule.textadventurebackend.dto.response.GameInfoAvailableDTO;
 import at.tobias.schule.textadventurebackend.exception.AdventureNotFoundException;
 import at.tobias.schule.textadventurebackend.model.AdventureGameModel;
@@ -93,5 +94,12 @@ public class AdventureGameService implements IAdventureService {
         adventureGameModel.setAmountRating(oldAmountReviews+1);
         adventureGameModel.setRatingSummedUp(oldReviewSummed+stars);
         update(adventureGameModel);
+    }
+    public void changeStatus(StatusDTO statusDTO){
+        AdventureGameModel adventureGameModel = findById(statusDTO.id());
+        if(adventureGameModel == null)
+            throw new AdventureNotFoundException(String.format("Adventure with ID %s not found",statusDTO.id()));
+        adventureGameModel.setAvailable(statusDTO.status());
+        save(adventureGameModel);
     }
 }

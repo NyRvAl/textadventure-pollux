@@ -388,6 +388,7 @@ Fields, only available in some actions:
 ***
 ### REST-API endpoints
 
+
 #### AdventureController
   - **@PostMapping**("/newAdventure")
   - **Description**: Uploads a new adventure file.
@@ -469,6 +470,32 @@ Fields, only available in some actions:
 
 - [ ] **Content Expansion**: Expand the library of adventures available to players by creating new content.
 ***
+
+### Update 16.06.2024
+Added the option the change how a requirement determines if its fullfilled. The default option is still checking for equivalence. The following options are now available:
+- EQUAL
+- NOT_EQUAL
+- GREATER
+- LOWER 
+- GREATER_EQUALS
+- LOWER_EQUALS
+
+*Example:*
+
+```json
+      "requirements": [
+        {
+          "variable": "wallDecision",
+          "value": "überqueren"
+        },
+        {
+          "variable": "randomEvent",
+          "value": 10,
+          "option" : "GREATER_EQUALS"
+        }
+      ],
+```
+In this case, the requirement is met when the randomEvent variable has a value greater or equal 10.
 ## Results
 
 

@@ -483,19 +483,36 @@ Added the option the change how a requirement determines if its fullfilled. The 
 *Example:*
 
 ```json
-      "requirements": [
-        {
-          "variable": "wallDecision",
-          "value": "überqueren"
-        },
-        {
-          "variable": "randomEvent",
-          "value": 10,
-          "option" : "GREATER_EQUALS"
-        }
-      ],
+  "requirements": [
+    {
+      "variable": "wallDecision",
+      "value": "überqueren"
+      },
+      {
+        "variable": "randomEvent",
+        "value": 10,
+        "option" : "GREATER_EQUALS"
+      }
+  ]
 ```
 In this case, the requirement is met when the randomEvent variable has a value greater or equal 10.
+
+Additionally, it's now possible to use functions. At this point, only a function **ADD** is currently usable. It **has** to be performed in a **setVariables** property.
+
+**Syntax:**
+```
+$functionName(paramName=paramValue,paramName2={{testVariable}})
+```
+Currently only Strings and Integers can be used as assignment, other data types are yet to come. Furthermore global variables can be used as an assignment value.
+
+**Example:**
+```json
+{
+  "action": "WRITE",
+  "text": "Der Wind trägt das Heulen der Wölfe zu dir herüber.",
+  "setVariables": ["$ADD(var=test,add=-5)"]
+}
+```
 ***
 
 ## Results

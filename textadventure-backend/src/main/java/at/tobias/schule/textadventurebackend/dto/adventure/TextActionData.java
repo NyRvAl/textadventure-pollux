@@ -2,6 +2,7 @@ package at.tobias.schule.textadventurebackend.dto.adventure;
 
 
 import at.tobias.schule.textadventurebackend.service.VariableManager;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -18,32 +19,16 @@ import java.util.concurrent.ConcurrentHashMap;
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonFormat(with = JsonFormat.Feature.ACCEPT_CASE_INSENSITIVE_PROPERTIES)
 
 public abstract class TextActionData implements IAction {
 
     private List<String> setVariables;
     protected Map<String, Object> localVariables = new ConcurrentHashMap<>();
 
-    @JsonIgnore
     private boolean visited = false;
-//    public void executeSetVariables(String gameId) {
-//        if(setVariables == null)
-//            return;
-//        setVariables.forEach(variable -> {
-//                    String variables = variable.split("=")[0];
-//                    String assignmentRaw = variable.split("=")[1];
-//                    String assignment = assignmentRaw.replace("{", "").replace("}", "");
-//                    Object assignmentValue = null;
-//                    if (VariableManager.GLOBAL_VARIABLE.matcher(assignmentRaw).matches())
-//                        assignmentValue = variableManager.getVariables(gameId).get(assignment);
-//                    else if (VariableManager.LOCAL_VARIABLE.matcher(assignmentRaw).matches())
-//                        assignmentValue = localVariables.get(assignment);
-//                    variableManager.getVariables(gameId).put(variables, assignmentValue);
-//                }
-//        );
-//    }
-@JsonProperty("action")
 
+@JsonProperty("action")
 public abstract String deserializeKey();
 
 

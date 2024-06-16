@@ -111,7 +111,8 @@ The header is needed in order to display the informations of the adventure corre
 
 *Example*:
 ```json
-{"author": "Gave",
+{
+  "author": "Gave",
   "displayName": "GoT",
   "adventure": [
     {
@@ -119,8 +120,9 @@ The header is needed in order to display the informations of the adventure corre
       "stage": 0,
       "requirements": [],
       "actions": []
-    }]
-    } 
+    }
+  ]
+} 
 ```
 3. Now you can start creating your actions. You can currently choose between **Input** ("*WAIT_FOR_INPUT*"), **Output**("*WRITE*"), **Timeout** ("*SLEEP*") and **Random-Number**("*RANDOM_NUMBER*") actions (more to follow). Depending on your chosen action there are different fields to set. However, there are some fields which can be used in every action:
 
@@ -498,6 +500,12 @@ Added the option the change how a requirement determines if its fullfilled. The 
 In this case, the requirement is met when the randomEvent variable has a value greater or equal 10.
 
 Additionally, it's now possible to use functions. At this point, only a function **ADD** is currently usable. It **has** to be performed in a **setVariables** property.
+
+**Currently available functions:**
+- **ADD**
+  - *Parameter:*
+    - var - the name of the increasing variable
+    - add - the amount to be addeded to the variable
 
 **Syntax:**
 ```

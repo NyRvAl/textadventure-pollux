@@ -18,7 +18,6 @@ public class TextAdventureData {
     private long id;
     private List<TextStageData> adventure = new ArrayList<>();
     private String gameId;
-    private int currentStageIndex = 0;
     private int currentTextActionIndex = 0;
 //    public List<TextActionData> next() {
 //        List<TextActionData> textActionData = new ArrayList<>();

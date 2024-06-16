@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TextAdventureAdminWPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cbdc229bc87fa648b1544a715b27ad7aa1ab324")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a84dbfdcf865ecba998154fafa9e8941043c674")]
 [assembly: System.Reflection.AssemblyProductAttribute("TextAdventureAdminWPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TextAdventureAdminWPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

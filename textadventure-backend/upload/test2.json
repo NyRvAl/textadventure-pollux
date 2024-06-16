@@ -76,7 +76,8 @@
             "zurück"
           ],
           "setVariables": [
-            "wallDecision={input}"
+            "wallDecision={input}",
+            "$ADD(var=index,add=-2)"
           ]
         }
       ]

@@ -31,6 +31,7 @@ public class GameProcessService {
     private final VariableManager variableManager;
     private final ActionManager actionManager;
 
+
     @Autowired
     public GameProcessService(VariableManager variableManager, ActionManager actionManager) {
         this.variableManager = variableManager;
@@ -41,17 +42,22 @@ public class GameProcessService {
         TextStageData currentStage;
         List<TextActionData> toVisit = new ArrayList<>();
         while (true) {
-            if (textAdventureData.getCurrentStageIndex() == 0)
+            if (!variableManager.getVariables(gameId).containsKey("index") || (int)variableManager.getVariables(gameId).get("index") == 0) {
                 currentStage = findFirstStage(textAdventureData);
+                variableManager.setVariables(gameId,"index",0);
+            }
             else {
                 currentStage = findNextStage(textAdventureData, gameId);
             }
             if (currentStage == null)
                 break;
-            textAdventureData.setCurrentStageIndex((int) currentStage.getStage() + 1);
+            variableManager.setVariables(gameId,"index",(int)variableManager.getVariables(gameId).get("index")+1);
+            int actionIndex = 0;
+            textAdventureData.setCurrentTextActionIndex(-1);
 
             for (TextActionData textActionData : currentStage.getActions()) {
-                if (textActionData != null && !(textActionData instanceof IInputAction) && !textActionData.isVisited()) {
+
+                if (textActionData != null && !(textActionData instanceof IInputAction) && actionIndex > textAdventureData.getCurrentTextActionIndex()) {
                     if (!(textActionData instanceof RandomNumberAction))
                         toVisit.add(textActionData);
                     textActionData.onAction(new ActionContext() {
@@ -66,11 +72,14 @@ public class GameProcessService {
                         }
                     });
                     executeSetVariables(textActionData, gameId);
-                    textActionData.setVisited(true);
-                } else if (textActionData != null && !textActionData.isVisited() && textActionData instanceof IInputAction) {
+                    textAdventureData.setCurrentTextActionIndex(actionIndex);
+                } else if (textActionData != null &&  actionIndex > textAdventureData.getCurrentTextActionIndex() && textActionData instanceof IInputAction) {
                     toVisit.add(textActionData);
                     return toVisit;
                 }
+
+                actionIndex++;
+
             }
         }
         variableManager.clearVariables(gameId);
@@ -80,12 +89,13 @@ public class GameProcessService {
 
     public TextActionData handleInput(TextAdventureData textAdventureData, String gameId, ChatRoomMessageDTO chatRoomMessageDTO) {
         TextStageData currentStage;
-        currentStage = findStage(textAdventureData, gameId, textAdventureData.getCurrentStageIndex() - 1);
+        currentStage = findStage(textAdventureData, gameId, (int)variableManager.getVariables(gameId).getOrDefault("index",1) - 1);
+        int actionIndex = 0;
 
         for (TextActionData textActionData : currentStage.getActions()) {
-            if (textActionData != null && !(textActionData instanceof IInputAction) && !textActionData.isVisited()) {
+            if (textActionData != null && !(textActionData instanceof IInputAction) &&  textAdventureData.getCurrentTextActionIndex()<actionIndex) {
                 return null;
-            } else if (textActionData != null && !textActionData.isVisited() && textActionData instanceof IInputAction) {
+            } else if (textActionData != null && textAdventureData.getCurrentTextActionIndex()<actionIndex && textActionData instanceof IInputAction) {
                 if (((IInputAction) textActionData).input(chatRoomMessageDTO)) {
                     textActionData.onAction(new ActionContext() {
                         @Override
@@ -99,12 +109,15 @@ public class GameProcessService {
                         }
                     });
                     executeSetVariables(textActionData, gameId);
-                    textActionData.setVisited(true);
+                    textAdventureData.setCurrentTextActionIndex(textAdventureData.getCurrentTextActionIndex()+1);
+
                 }
                 else
                     return null;
                 return textActionData;
             }
+            actionIndex++;
+
         }
 
 
@@ -121,7 +134,7 @@ public class GameProcessService {
 
     public TextStageData findNextStage(TextAdventureData textAdventureData, String gameId) {
         return textAdventureData.getAdventure().stream()
-                .filter(element -> element.getStage() == (textAdventureData.getCurrentStageIndex()))
+                .filter(element -> element.getStage() == ((int)variableManager.getVariables(gameId).getOrDefault("index",0)))
                 .filter(element -> checkRequirements(element, gameId))
                 .findFirst().orElse(null);
     }
@@ -159,6 +172,7 @@ public class GameProcessService {
                 }
         );
     }
+
 
     public void executeFunctions(String gameId, String variable) {
         variable = variable.replace("$", "");

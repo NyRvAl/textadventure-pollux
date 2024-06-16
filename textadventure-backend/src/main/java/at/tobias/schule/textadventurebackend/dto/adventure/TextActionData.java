@@ -26,7 +26,6 @@ public abstract class TextActionData implements IAction {
     private List<String> setVariables;
     protected Map<String, Object> localVariables = new ConcurrentHashMap<>();
 
-    private boolean visited = false;
 
 @JsonProperty("action")
 public abstract String deserializeKey();

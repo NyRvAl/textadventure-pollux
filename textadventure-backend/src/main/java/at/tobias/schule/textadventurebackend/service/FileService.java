@@ -141,8 +141,7 @@ public class FileService {
                     break;
                 }
             }
-            catch (GameFileReadException | GameHeaderNotReadableException e){
-                e.printStackTrace();
+            catch (GameFileReadException | GameHeaderNotReadableException ignored){
             }
         }
         readWriteLock.readLock().unlock();

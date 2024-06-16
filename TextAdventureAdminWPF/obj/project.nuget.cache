@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VC5uI3jBTrM=",
+  "dgSpecHash": "751yREB4Yi0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tobia\\source\\repos\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj",
+  "projectFilePath": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tobia\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.31\\microsoft.windows.sdk.net.ref.10.0.22621.31.nupkg.sha512"
   ],

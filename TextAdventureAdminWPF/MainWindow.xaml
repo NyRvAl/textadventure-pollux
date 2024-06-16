@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TextAdventureAdminWPF"
         xmlns:controls="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" Icon="/k3_HyB.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="161*"/>

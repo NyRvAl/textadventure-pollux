@@ -13,7 +13,6 @@ import {MenubarModule} from "primeng/menubar";
 import {RippleModule} from "primeng/ripple";
 import {TerminalModule, TerminalService} from "primeng/terminal";
 import {InputSwitchModule} from "primeng/inputswitch";
-import {SettingsComponent} from './settings/settings.component';
 import {CardModule} from "primeng/card";
 import {PanelModule} from "primeng/panel";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -27,16 +26,13 @@ import {DialogModule} from "primeng/dialog";
 import {InputTextModule} from "primeng/inputtext";
 import {AutoCompleteModule} from "primeng/autocomplete";
 import {ChatroomComponent} from './chatroom/chatroom.component';
-import { IngameComponent } from './ingame/ingame.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     Join_gameComponent,
-    SettingsComponent,
     ChatroomComponent,
-    IngameComponent,
 
   ],
   imports: [

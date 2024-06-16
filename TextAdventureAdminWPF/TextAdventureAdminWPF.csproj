@@ -21,11 +21,13 @@
   <ItemGroup>
     <None Remove="5442674.png" />
     <None Remove="5442674.svg" />
+    <None Remove="k3_HyB.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="5442674.png" />
     <Resource Include="5442674.svg" />
+    <Resource Include="k3_HyB.png" />
   </ItemGroup>
 
 </Project>

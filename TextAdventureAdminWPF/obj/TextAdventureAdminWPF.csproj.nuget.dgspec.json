@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tobia\\source\\repos\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj": {}
+    "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tobia\\source\\repos\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj": {
+    "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tobia\\source\\repos\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj",
+        "projectUniqueName": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj",
         "projectName": "TextAdventureAdminWPF",
-        "projectPath": "C:\\Users\\tobia\\source\\repos\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj",
+        "projectPath": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\TextAdventureAdminWPF.csproj",
         "packagesPath": "C:\\Users\\tobia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tobia\\source\\repos\\TextAdventureAdminWPF\\obj\\",
+        "outputPath": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tobia\\AppData\\Roaming\\NuGet\\NuGet.Config",

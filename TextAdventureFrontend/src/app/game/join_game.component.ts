@@ -2,7 +2,6 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {JoystickEvent, NgxJoystickComponent} from "ngx-joystick";
 import {Router} from "@angular/router";
 import {JoystickManagerOptions, JoystickOutputData} from "nipplejs";
-import {Vector} from "../../helper/Vector";
 import {InputSwitchChangeEvent} from "primeng/inputswitch";
 import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http'; // Import HttpClientModule
 @Component({

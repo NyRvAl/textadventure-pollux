@@ -468,7 +468,7 @@ Fields, only available in some actions:
 
 - [ ] **Security Enhancements**: Introduce authentication and authorization mechanisms to improve the security of the application, safeguarding user data and preventing unauthorized access.
 
-- [ ] **Content Expansion**: Expand the library of adventures available to players by creating new content.
+- [x] **Content Expansion**: Expand the library of adventures available to players by creating new content.
 ***
 
 ### Update 1.1

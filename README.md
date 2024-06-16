@@ -471,7 +471,7 @@ Fields, only available in some actions:
 - [ ] **Content Expansion**: Expand the library of adventures available to players by creating new content.
 ***
 
-### Update 16.06.2024
+### Update 1.1
 Added the option the change how a requirement determines if its fullfilled. The default option is still checking for equivalence. The following options are now available:
 - EQUAL
 - NOT_EQUAL

@@ -131,38 +131,31 @@ namespace TextAdventureAdminWPF
         {
             try
             {
-                // Create StatusDTO object
                 StatusDTO statusDTO = new StatusDTO
                 {
-                    Id = long.Parse(gameId), // Assuming gameId is a long in the DTO
+                    Id = long.Parse(gameId),
                     Status = status
                 };
 
-                // Serialize StatusDTO to JSON
                 string json = JsonSerializer.Serialize(statusDTO);
 
-                // Prepare HTTP request message
                 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, "http://localhost:5000/status");
                 request.Content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                // Send HTTP PUT request
                 HttpResponseMessage response = await httpClient.SendAsync(request);
 
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show($"Game with ID {gameId} status changed successfully.");
-                    // Optionally, update UI or handle success
                 }
                 else
                 {
                     MessageBox.Show($"Failed to change game status: {response.StatusCode}");
-                    // Handle failure or display error message
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error changing game status: {ex.Message}");
-                // Handle exception or display error message
             }
         }
 

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\statusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:statusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\statusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|solutionrelative:statusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A9E74C38-9B7C-4BFB-9A7F-90B98BA524AB}|TextAdventureAdminWPF.csproj|c:\\users\\tobia\\github\\textadventure-pollux\\textadventureadminwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -51,7 +51,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -59,28 +59,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "StatusDTO.cs",
               "DocumentMoniker": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\StatusDTO.cs",
               "RelativeDocumentMoniker": "StatusDTO.cs",
               "ToolTip": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\StatusDTO.cs",
               "RelativeToolTip": "StatusDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T16:30:34.625Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\tobia\\github\\textadventure-pollux\\TextAdventureAdminWPF\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAAkwIMAAAAPAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAqwJ4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T18:39:10.447Z"
+              "WhenOpened": "2024-05-31T18:39:10.447Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

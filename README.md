@@ -474,7 +474,7 @@ Fields, only available in some actions:
 ***
 
 ### Update 1.1
-Added the option the change how a requirement determines if its fullfilled. The default option is still checking for equivalence. The following options are now available:
+Added the option to change how a requirement determines if its fullfilled. The default option is still checking for equivalence. The following options are now available:
 - EQUAL
 - NOT_EQUAL
 - GREATER
